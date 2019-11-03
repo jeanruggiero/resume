@@ -1,4 +1,4 @@
-\documentclass[11pt, letterpaper]{article}
+\documentclass[10pt, letterpaper]{article}
 \pagestyle{empty}
 
 \usepackage{xcolor}
@@ -7,8 +7,9 @@
 
 \usepackage[letterpaper, left=0.6in, right=0.6in, top=0.8in, bottom=0.5in]{geometry}
 \setlength{\parindent}{0em}
-\setlength{\parskip}{0em}
+\setlength{\parskip}{-.5em}
 \setlength{\tabcolsep}{1.2mm}
+\linespread{.95}
 
 %\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
@@ -29,14 +30,14 @@
 	 UprightFont={*},
 	 BoldFont={* Medium}]
 	{Helvetica Neue}
-\setmainfont[Color={text}]{Helvetica Neue}
+\setmainfont[Color={text},Scale=0.9]{Helvetica Neue}
 
-\newcommand{\header}[1]{{\color{text}\fontspec{Georgia}\Huge #1}}
+\newcommand{\header}[1]{{\color{text}\fontspec{Georgia}\Huge #1}\vspace{0.6em}}
 
 \renewcommand{\section}[1]{
-	\vspace{0.5mm}
+	\ignorespaces\vspace{0.6em}
 	{\fontspec{Helvetica Neue Medium}\color{text}\Large\textbf{#1}} \hrulefill
-	\vspace{2mm}}
+	\vspace{1.5em}}
 
 \newcommand{\job}[5]{
 	\begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash\setlength\hsize{\mylcolwidth}}X >{\raggedright\arraybackslash}X@{}}
@@ -47,11 +48,13 @@
 		#5
 	\end{tabularx}}
 
-\newcommand{\education}[4]{
+\newcommand{\education}[5]{
 	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\setlength\hsize{6in}}X@{} @{}>{\raggedleft\arraybackslash}X@{}}
 		\textbf{#1} & #2\\
 		#3 & #4\\
 	\end{tabularx}
+	#5
+	\vspace{1em}
 	\ignorespaces}
 
 \newcommand{\volunteer}[4]{
@@ -67,9 +70,9 @@
 \newcommand{\skill}[2]{
 	\begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash\setlength\hsize{\mylcolwidth}}X >{\raggedright\arraybackslash}X@{}}
 		#1 &\phantom{>}\hspace{\labelsep}#2
-	\end{tabularx}\vspace{0.3em}}
+	\end{tabularx}\vspace{1em}}
 
-\newcommand{\award}[3]{\textbf{#1} (#2): #3\vspace{2mm}\ignorespaces}
+\newcommand{\award}[3]{\textbf{#1} (#2): #3\vspace{1em}\ignorespaces}
 
 
 
@@ -89,24 +92,24 @@
 		{2021}
 		{Master of Science in Computer Science}
 		{}
-		\vspace{1.5mm}
+		{}
 		
 	\education
 		{University of Washington}
 		{2019}
 		{Certificate in Python Programming; courses in algorithms, data structures, and statistics}
 		{}	
-	\vspace{1.5mm}		
+		{}
 	
 	\education
 		{Purdue University}
 		{2014}
 		{Bachelor of Science in Aeronautical and Astronautical Engineering}
 		{GPA: 3.76/4.0}	
-	\begin{itemize}[>]
-		\item Designed, fabricated, and tested the world’s largest 3D printed aircraft!
-	\end{itemize}
-	\vspace{4mm}
+		{\begin{itemize}[>]
+			\ignorespaces
+			\item Designed, fabricated, and tested the world’s largest 3D printed aircraft!
+		\end{itemize}}
 	
 
 	\section{Professional Experience}
@@ -118,8 +121,9 @@
 		{Oct 2018 -- Aug 2019} % Date Range
 		{
 			\begin{itemize}[>]
-				\item Paired with developers to implement flight test calculations in Python
+				\item Paired with developers to implement flight test computations in Python
 				\item Performed user research to identify and prioritize web application usability issues and generated new features to alleviate user pain points
+				\item Developed an application using Python to extract, analyze, and visualize data from my team’s applications
 			\end{itemize}
 		}
 
@@ -134,15 +138,22 @@
 			\item Mentored team members through coaching of new employees, development of training courses, and regular contributions to internal technical publications
 		\end{itemize}}
 	
-	\job
-	{Private Tutor}
-	{Elizabeth, NJ}
-	{High School Math Tutor}
-	{2010}
+	\job{Rolls-Royce}{Indianapolis, IN}{Engineering Co-Op}{2012 -- 2013}
 	{\begin{itemize}[>]
-			\item Helped a learning-disabled student to understand and implement high school algebra concepts
+			\item Developed thermodynamic cycle models for new and novel gas turbine engines using C++
+			\item Generated insights for optimal sizing of engine cooling pathways through a Monte Carlo analysis
+			\item Performed statistical analysis of torque tool data to measure manufacturing defect rates
 	\end{itemize}}
 	
+%	\job
+%	{Private Tutor}
+%	{Elizabeth, NJ}
+%	{High School Math Tutor}
+%	{2010}
+%	{\begin{itemize}[>]
+%			\item Helped a learning-disabled student to understand and implement high school algebra concepts
+%	\end{itemize}}
+
 	
 	\section{Volunteer Experience}
 	
@@ -152,15 +163,20 @@
 	{Head Instructor}
 	{\begin{itemize}[>]
 		\item Taught rock climbing fundamentals and safety skills to students and instructors by understanding and accommodating individual learning styles
-%		\item Automated processing of student application data using Python and Jupyter Notebooks to generate summary reports for admissions committee members
+		\item Executed promotional campaign that increased number of applicants by 50\% over previous two years
+		\item Automated processing of student application data using Python and Jupyter Notebooks to generate interactive summary reports for admissions committee members
 	\end{itemize}}
 
 	
-	\section{Technical Skills}
+	\section{Skills}
 	
 	\skill
-	{Programming}
-	{Python, Django, Jupyter Notebooks, Git, Jira, MATLAB, C++, Latex, HTML, CSS}
+	{Development}
+	{Python, Django, pandas, Jupyter Notebook, C++, JavaScript, HTML, CSS, MATLAB, Git}
+	
+	\skill
+	{Product/Design}
+	{Jira, Sketch, InVision, user personas, user journey mapping, usability testing}
 	
 	\skill
 	{Analytics}
@@ -168,12 +184,8 @@
 	
 	\skill
 	{Engineering}
-	{Flight test, propulsion \& fuels, fluid dynamics, technical writing, product management}
-	
-%	\skill
-%	Product Management Workshop - Boeing, 2018
-%	
-	\vspace{4mm}
+	{Flight test, propulsion \& fuels, fluid dynamics, technical writing, LaTeX}
+
 	
 	\section{Awards \& Honors}
 	
@@ -181,6 +193,11 @@
 	{John Cashman Flight Test Safety Award}
 	{2015}
 	{The Cashman Award recognizes one individual or group per year that has made an enduring contribution to the advancement of flight test safety}
+	
+	\award
+	{ASME IAM3D Challenge Best Overall}
+	{2014}
+	{The IAM3D Challenge recognizes undergraduate students from around the world who re-engineer existing products or create new designs that minimize energy consumption or improve energy efficiency.}
 	
 	\award
 	{Purdue University Trustees Scholarship}
