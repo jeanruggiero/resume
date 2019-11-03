@@ -1,0 +1,189 @@
+\documentclass[11pt, letterpaper]{article}
+\pagestyle{empty}
+
+\usepackage{xcolor}
+\definecolor{darkgray}{HTML}{2D2D2D}
+\colorlet{text}{darkgray}
+
+\usepackage[letterpaper, left=0.6in, right=0.6in, top=0.8in, bottom=0.5in]{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0em}
+\setlength{\tabcolsep}{1.2mm}
+
+%\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+
+\newlength{\mylcolwidth}
+\setlength{\mylcolwidth}{0.9in}
+
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize]{leftmargin=*, parsep=1mm, itemsep=0em, topsep=1mm}
+
+\usepackage{fontspec}
+\newfontfamily{\helveticaneue}
+	[Ligatures=TeX,
+	 UprightFont={*},
+	 BoldFont={* Medium}]
+	{Helvetica Neue}
+\setmainfont[Color={text}]{Helvetica Neue}
+
+\newcommand{\header}[1]{{\color{text}\fontspec{Georgia}\Huge #1}}
+
+\renewcommand{\section}[1]{
+	\vspace{0.5mm}
+	{\fontspec{Helvetica Neue Medium}\color{text}\Large\textbf{#1}} \hrulefill
+	\vspace{2mm}}
+
+\newcommand{\job}[5]{
+	\begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash\setlength\hsize{\mylcolwidth}}X >{\raggedright\arraybackslash}X@{}}
+		#3 &
+		{\begin{tabularx}{\hsize}{@{}>{\raggedright\arraybackslash}X @{}>{\raggedleft\arraybackslash}X@{}}
+			\phantom{>}\hspace{\labelsep}\textbf{#1} (#2) & #4
+		\end{tabularx}}
+		#5
+	\end{tabularx}}
+
+\newcommand{\education}[4]{
+	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\setlength\hsize{6in}}X@{} @{}>{\raggedleft\arraybackslash}X@{}}
+		\textbf{#1} & #2\\
+		#3 & #4\\
+	\end{tabularx}
+	\ignorespaces}
+
+\newcommand{\volunteer}[4]{
+	\begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash\setlength\hsize{\mylcolwidth}}X >{\raggedright\arraybackslash}X@{}}
+		#3 &
+		{\begin{tabularx}{\hsize}{@{}>{\raggedright\arraybackslash\setlength\hsize{5in}}X @{}>{\raggedleft\arraybackslash}X@{}}
+				\phantom{>}\hspace{\labelsep}\textbf{#1} & #2
+		\end{tabularx}}
+		%\phantom{>}\hspace{\labelsep}\textbf{#1} (#2)
+		#4
+	\end{tabularx}}
+
+\newcommand{\skill}[2]{
+	\begin{tabularx}{\textwidth}{@{}>{\raggedleft\arraybackslash\setlength\hsize{\mylcolwidth}}X >{\raggedright\arraybackslash}X@{}}
+		#1 &\phantom{>}\hspace{\labelsep}#2
+	\end{tabularx}\vspace{0.3em}}
+
+\newcommand{\award}[3]{\textbf{#1} (#2): #3\vspace{2mm}\ignorespaces}
+
+
+
+
+
+\begin{document}
+	\begin{center}
+		\header{Jean Ruggiero}
+		
+		jeanruggiero@gmail.com | 908-577-1164 | jeanmruggiero.com | github.com/jeanruggiero
+	\end{center}
+
+	\section{Education}
+	
+	\education
+		{Northeastern University}
+		{2021}
+		{Master of Science in Computer Science}
+		{}
+		\vspace{1.5mm}
+		
+	\education
+		{University of Washington}
+		{2019}
+		{Certificate in Python Programming; courses in algorithms, data structures, and statistics}
+		{}	
+	\vspace{1.5mm}		
+	
+	\education
+		{Purdue University}
+		{2014}
+		{Bachelor of Science in Aeronautical and Astronautical Engineering}
+		{GPA: 3.76/4.0}	
+	\begin{itemize}[>]
+		\item Designed, fabricated, and tested the world’s largest 3D printed aircraft!
+	\end{itemize}
+	\vspace{4mm}
+	
+
+	\section{Professional Experience}
+
+	\job
+		{Boeing} % Company
+		{Seattle, WA} % Location
+		{Product Manager} % Position
+		{Oct 2018 -- Aug 2019} % Date Range
+		{
+			\begin{itemize}[>]
+				\item Paired with developers to implement flight test calculations in Python
+				\item Performed user research to identify and prioritize web application usability issues and generated new features to alleviate user pain points
+			\end{itemize}
+		}
+
+	\job
+		{Boeing} % Company
+		{Seattle, WA} % Location
+		{Flight Test Engineer} % Position
+		{June 2014 -- Oct 2018} % Date Range	
+		{\begin{itemize}[>]
+			\item Analyzed flight test data to develop insights and formulate recommendations for internal customers
+			\item Developed applications using MATLAB for real-time data monitoring during flight tests
+			\item Mentored team members through coaching of new employees, development of training courses, and regular contributions to internal technical publications
+		\end{itemize}}
+	
+	\job
+	{Private Tutor}
+	{Elizabeth, NJ}
+	{High School Math Tutor}
+	{2010}
+	{\begin{itemize}[>]
+			\item Helped a learning-disabled student to understand and implement high school algebra concepts
+	\end{itemize}}
+	
+	
+	\section{Volunteer Experience}
+	
+	\volunteer
+	{Boeing Employees Alpine Society (BOEALPS)}
+	{2017 -- 2019}
+	{Head Instructor}
+	{\begin{itemize}[>]
+		\item Taught rock climbing fundamentals and safety skills to students and instructors by understanding and accommodating individual learning styles
+%		\item Automated processing of student application data using Python and Jupyter Notebooks to generate summary reports for admissions committee members
+	\end{itemize}}
+
+	
+	\section{Technical Skills}
+	
+	\skill
+	{Programming}
+	{Python, Django, Jupyter Notebooks, Git, Jira, MATLAB, C++, Latex, HTML, CSS}
+	
+	\skill
+	{Analytics}
+	{Data wrangling, engineering computation, data visualization and presentation}
+	
+	\skill
+	{Engineering}
+	{Flight test, propulsion \& fuels, fluid dynamics, technical writing, product management}
+	
+%	\skill
+%	Product Management Workshop - Boeing, 2018
+%	
+	\vspace{4mm}
+	
+	\section{Awards \& Honors}
+	
+	\award
+	{John Cashman Flight Test Safety Award}
+	{2015}
+	{The Cashman Award recognizes one individual or group per year that has made an enduring contribution to the advancement of flight test safety}
+	
+	\award
+	{Purdue University Trustees Scholarship}
+	{2010 -- 2014}
+	{The Trustees Scholarship is awarded to individuals who demonstrate exceptional academic achievement, leadership, and service in their school and community}
+\end{document}
